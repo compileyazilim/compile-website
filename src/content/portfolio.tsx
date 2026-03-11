@@ -1,20 +1,20 @@
 export const portfolio = [
   {
-    title: "Compile Web",
-    tag: "Website",
-    desc: "One-page brand website with smooth sections and animations.",
+    title: "TSS Journey Screens",
+    tag: "Health Insurance",
+    desc: "Complementary health insurance application and management flow. Multi-step journey, validations, production-ready implementation.",
     href: "#",
   },
   {
-    title: "Design System",
-    tag: "UI Library",
-    desc: "Reusable UI components and tokens for consistent product UX.",
+    title: "Pharmacy Provizyon Module",
+    tag: "Pharmacy Ops",
+    desc: "Contracted pharmacy provizyon approval flows, invoice steps and pharmacy operation screens. End-to-end integrated.",
     href: "#",
   },
   {
-    title: "Performance Boost",
-    tag: "Optimization",
-    desc: "Core Web Vitals improvements and faster load times.",
+    title: "DAP & Self Service Portal",
+    tag: "Self Service",
+    desc: "Digital application platform and self-service insurance management modules. Modern UI with a strong service layer.",
     href: "#",
   },
 ];

@@ -1,103 +1,137 @@
-.grid {
-  display: grid;
+/* Contact.module.css */
+
+/* Tek koyu bölüm — tüm sitede kontrast kırılımı yaratır */
+.sec {
+  background: var(--ink); /* #1a1612 — ılık koyu */
+  padding: 112px 56px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Turuncu radial glow — sol üst */
+.orb1 {
+  position: absolute;
+  left: -160px;
+  top: -160px;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(
+    circle,
+    rgba(212, 84, 26, 0.22) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+/* Turuncu glow — sağ alt */
+.orb2 {
+  position: absolute;
+  right: -120px;
+  bottom: -100px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(
+    circle,
+    rgba(212, 84, 26, 0.12) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.inner {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Eyebrow — çizgi+metin+çizgi (ama açık renk) */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--org2);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.line {
+  width: 24px;
+  height: 1px;
+  background: var(--org2);
+}
+
+.h {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(42px, 5vw, 68px);
+  font-weight: 900;
+  color: var(--cream);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.em {
+  font-style: italic;
+  color: var(--org2);
+}
+
+.sub {
+  font-size: 17px;
+  font-weight: 300;
+  color: rgba(250, 248, 244, 0.55);
+  line-height: 1.72;
+  margin-bottom: 48px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
   gap: 14px;
 }
 
-.infoTitle {
-  font-size: 18px;
-  font-weight: 900;
-  letter-spacing: -0.02em;
-}
-
-.infoText {
-  margin-top: 10px;
-  color: var(--muted);
-  line-height: 1.7;
-  font-size: 14px;
-}
-
-.row {
-  margin-top: 14px;
+/* İletişim link kartı */
+.cl {
   display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  border-top: 1px solid var(--border);
-  padding-top: 12px;
-}
-
-.k {
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.v {
-  color: var(--ink);
-  font-size: 13px;
+  align-items: center;
+  gap: 16px;
+  background: rgba(250, 248, 244, 0.06);
+  border: 1px solid rgba(250, 248, 244, 0.1);
+  border-radius: 16px;
+  padding: 18px 26px;
   text-decoration: none;
+  color: var(--cream);
+  font-size: 15px;
+  font-weight: 500;
+  transition:
+    background 0.25s,
+    border-color 0.25s,
+    transform 0.25s;
+  text-align: left;
 }
-.v:hover {
-  color: var(--accent);
+/* Hover: turuncu tonlara geçer + sağa kayar */
+.cl:hover {
+  background: rgba(212, 84, 26, 0.18);
+  border-color: rgba(212, 84, 26, 0.35);
+  transform: translateX(6px);
 }
-
-.form {
-  display: grid;
-  gap: 12px;
+.ico {
+  font-size: 22px;
+  flex-shrink: 0;
 }
-
-.label {
-  display: grid;
-  gap: 6px;
-  font-size: 13px;
-  color: var(--muted);
+.arr {
+  margin-left: auto;
+  color: var(--org2);
+  font-size: 18px;
+  transition: transform 0.2s;
 }
-
-.input,
-.textarea {
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 12px 12px;
-  font-size: 14px;
-  outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  background: white;
-  color: var(--ink);
-}
-
-.textarea {
-  min-height: 120px;
-  resize: vertical;
+.cl:hover .arr {
+  transform: translateX(4px);
 }
 
-.input:focus,
-.textarea:focus {
-  border-color: rgba(234, 105, 59, 0.55);
-  box-shadow: 0 0 0 6px rgba(234, 105, 59, 0.12);
-}
-
-.submit {
-  border: none;
-  cursor: pointer;
-  background: var(--accent);
-  color: white;
-  padding: 12px 14px;
-  border-radius: 14px;
-  font-size: 14px;
-  font-weight: 700;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-.submit:hover {
-  transform: translateY(-2px);
-  opacity: 0.92;
-}
-
-.note {
-  font-size: 12px;
-  color: var(--muted);
-}
-
-@media (min-width: 900px) {
-  .grid {
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 16px;
+@media (max-width: 700px) {
+  .sec {
+    padding: 80px 24px;
   }
 }

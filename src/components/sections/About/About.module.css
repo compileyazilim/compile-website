@@ -1,75 +1,105 @@
+/* About.module.css */
+
 .grid {
   display: grid;
-  gap: 14px;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
 }
 
-.mission {
-  padding: 26px;
+/* Sol kolon — biraz iç padding */
+.left {
+  padding-right: 24px;
 }
 
 .kicker {
-  font-size: 12px;
-  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--org);
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.kickerLine {
+  width: 20px;
+  height: 1px;
+  background: var(--org);
 }
 
-.missionTitle {
-  margin-top: 8px;
-  font-size: 26px;
+/* Playfair başlık */
+.h {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(32px, 3vw, 42px);
   font-weight: 900;
+  color: var(--ink);
+  margin-bottom: 28px;
   letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+.em {
+  font-style: italic;
+  color: var(--org);
 }
 
-.text {
-  margin-top: 12px;
+.p {
+  font-size: 15px;
+  font-weight: 300;
   color: var(--muted);
-  line-height: 1.8;
-  font-size: 14.5px;
+  line-height: 1.85;
+  margin-bottom: 18px;
 }
 
-.cards {
-  display: grid;
+/* Değer kartları */
+.values {
+  display: flex;
+  flex-direction: column;
   gap: 14px;
 }
-
-.areaCard {
-  padding: 20px;
+.vi {
+  background: #fff;
+  border: 1px solid rgba(26, 22, 18, 0.14);
+  border-radius: 16px;
+  padding: 22px;
+  transition:
+    border-color 0.25s,
+    transform 0.25s;
+}
+/* Hover: sağa doğru kayar — dinamik ama subtle */
+.vi:hover {
+  border-color: var(--bdo);
+  transform: translateX(6px);
 }
 
-.areaTop {
+.viRow {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  margin-bottom: 7px;
 }
-
-.areaTitle {
-  font-weight: 850;
-  letter-spacing: -0.02em;
+.viTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
 }
-
-.areaDot {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: var(--accent);
-  box-shadow: 0 0 0 7px rgba(234, 105, 59, 0.12);
+.viIco {
+  font-size: 18px;
 }
-
-.areaDesc {
-  margin-top: 10px;
+.viDesc {
+  font-size: 13px;
+  font-weight: 300;
   color: var(--muted);
-  line-height: 1.7;
-  font-size: 14px;
+  line-height: 1.65;
 }
 
-@media (min-width: 900px) {
+@media (max-width: 900px) {
   .grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    grid-template-columns: 1fr;
   }
-  .cards {
-    grid-template-columns: 1fr 1fr;
+  .left {
+    padding-right: 0;
   }
 }

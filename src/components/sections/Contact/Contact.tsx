@@ -1,61 +1,46 @@
-"use client";
-
-import Section from "../../layout/Section/Section";
+// src/components/sections/Contact/Contact.tsx
 import styles from "./Contact.module.css";
-import ui from "../../ui/ui.module.css";
 
 export default function ContactSection() {
   return (
-    <Section
-      id="contact"
-      title="Contact"
-      subtitle="Tell us about your project. We’ll reply quickly."
-    >
-      <div className={styles.grid}>
-        <div className={`${ui.card} ${styles.info}`}>
-          <div className={styles.infoTitle}>Compile</div>
-          <p className={styles.infoText}>
-            İstanbul / Remote <br />
-            UI Engineering · Next.js · Design Systems
-          </p>
+    <section id="contact" className={styles.sec}>
+      {/* Dekoratif glow'lar */}
+      <div className={styles.orb1} />
+      <div className={styles.orb2} />
 
-          <div className={styles.row}>
-            <span className={styles.k}>Email</span>
-            <a className={styles.v} href="mailto:hello@compile.com">
-              hello@compile.com
-            </a>
-          </div>
-
-          <div className={styles.row}>
-            <span className={styles.k}>LinkedIn</span>
-            <a className={styles.v} href="#" target="_blank">
-              Open profile →
-            </a>
-          </div>
+      <div className={styles.inner}>
+        <div className={styles.eyebrow}>
+          <span className={styles.line} /> Let&apos;s work together{" "}
+          <span className={styles.line} />
         </div>
+        <h2 className={styles.h}>
+          Ready to build
+          <br />
+          something <em className={styles.em}>great</em>?
+        </h2>
+        <p className={styles.sub}>
+          Looking for the right technology partner for your insurance platform?
+          Let&apos;s talk about your project and see how we can help.
+        </p>
 
-        <form className={`${ui.card} ${styles.form}`} onSubmit={(e) => e.preventDefault()}>
-          <label className={styles.label}>
-            Name
-            <input className={styles.input} placeholder="Your name" />
-          </label>
-
-          <label className={styles.label}>
-            Email
-            <input className={styles.input} placeholder="you@email.com" />
-          </label>
-
-          <label className={styles.label}>
-            Message
-            <textarea className={styles.textarea} placeholder="Tell us what you need..." />
-          </label>
-
-          <button className={styles.submit} type="submit">
-            Send message
-          </button>
-
-        </form>
+        <div className={styles.links}>
+          <a href="mailto:hello@compile.dev" className={styles.cl}>
+            <span className={styles.ico}>✉️</span>
+            <span>hello@compile.dev</span>
+            <span className={styles.arr}>→</span>
+          </a>
+          <a href="https://linkedin.com" target="_blank" className={styles.cl}>
+            <span className={styles.ico}>💼</span>
+            <span>Connect on LinkedIn</span>
+            <span className={styles.arr}>→</span>
+          </a>
+          <a href="https://github.com" target="_blank" className={styles.cl}>
+            <span className={styles.ico}>🐙</span>
+            <span>Explore our GitHub</span>
+            <span className={styles.arr}>→</span>
+          </a>
+        </div>
       </div>
-    </Section>
+    </section>
   );
 }

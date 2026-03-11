@@ -1,132 +1,116 @@
 "use client";
-
+import Image from "next/image";
 import { FadeUp, fadeUpProps } from "@/components/ui/Motion";
 import Container from "@/components/layout/Container/Container";
 import styles from "./Home.module.css";
 
+const domains = [
+  { icon: "🏥", name: "TSS / ÖSS", desc: "Journey screens & workflows" },
+  { icon: "💊", name: "Pharmacy", desc: "Provizyon & approval flows" },
+  {
+    icon: "🛏️",
+    name: "Inpatient / Outpatient",
+    desc: "Hospital & eligibility UX",
+  },
+  {
+    icon: "⚡",
+    name: "DAP & Self Service",
+    desc: "Digital application portals",
+  },
+];
+
 export default function HomeSection() {
   return (
     <section id="home" className={styles.hero}>
+      {/* Dekoratif çizgi — yatay diyagonal */}
+      <div className={styles.line} />
+
+      {/* Sağ taraftaki büyük daire (büyük ekran) */}
+      <div className={styles.circle} />
+      <div className={styles.circleInner} />
+
       <Container>
         <div className={styles.inner}>
-          <div className={styles.grid}>
-            <FadeUp {...fadeUpProps}>
-              <div className={styles.left}>
-                <div className={styles.badge}>
-                  <span className={styles.dot} />
-                  Compile • Insurance Digital Products
-                </div>
-
-                <h1 className={styles.h1}>
-                  Compile builds{" "}
-                  <span className={styles.accent}>production-ready</span>
-                  <br /> insurance platforms.
-                </h1>
-
-                <p className={styles.lead}>
-                  TSS & ÖSS, eczane, yatarak/ayakta, anlaşmalı kurum, DAP & Self
-                  Service — modern web UI, strong performance, clean
-                  architecture.
-                </p>
-
-                <div className={styles.actions}>
-                  <a className={styles.primary} href="#portfolio">
-                    See case studies
-                  </a>
-                  <a className={styles.secondary} href="#contact">
-                    Talk to us
-                  </a>
-                </div>
-
-                <FadeUp
-                  {...fadeUpProps}
-                  transition={{ duration: 0.7, ease: "easeOut", delay: 0.12 }}
-                >
-                  <div className={styles.miniGrid}>
-                    <div className={styles.miniItem}>
-                      <div className={styles.miniIcon}>🛡️</div>
-                      <div className={styles.miniTitle}>Reliable</div>
-                      <div className={styles.miniDesc}>
-                        Production workflows & validation mindset.
-                      </div>
-                    </div>
-
-                    <div className={styles.miniItem}>
-                      <div className={styles.miniIcon}>⚡</div>
-                      <div className={styles.miniTitle}>Fast Delivery</div>
-                      <div className={styles.miniDesc}>
-                        Clean structure, quick iteration.
-                      </div>
-                    </div>
-
-                    <div className={styles.miniItem}>
-                      <div className={styles.miniIcon}>🧩</div>
-                      <div className={styles.miniTitle}>UI Systems</div>
-                      <div className={styles.miniDesc}>
-                        Components, tokens, consistency.
-                      </div>
-                    </div>
-
-                    <div className={styles.miniItem}>
-                      <div className={styles.miniIcon}>📈</div>
-                      <div className={styles.miniTitle}>Performance</div>
-                      <div className={styles.miniDesc}>
-                        SEO + Core Web Vitals focused.
-                      </div>
-                    </div>
-                  </div>
-                </FadeUp>
+          {/* ─ Sol: metin ─ */}
+          <FadeUp {...fadeUpProps}>
+            <div className={styles.left}>
+              {/* Eyebrow — çizgi + yazı + çizgi */}
+              <div className={styles.eyebrow}>
+                <span className={styles.eyebrowLine} />
+                Insurance Digital Products
+                <span className={styles.eyebrowLine} />
               </div>
-            </FadeUp>
 
-            <FadeUp
-              {...fadeUpProps}
-              transition={{ duration: 0.7, ease: "easeOut", delay: 0.12 }}
-            >
-              <div className={styles.panel}>
-                <div className={styles.panelTop}>
-                  <div className={styles.panelTitle}>Domains</div>
-                  <div className={styles.panelPill}>
-                    Insurance • Platforms • UI
-                  </div>
+              {/* H1 — Playfair + italic accent */}
+              <h1 className={styles.h1}>
+                We engineer <em className={styles.em}>insurance</em>
+                <br />
+                platforms that ship.
+              </h1>
+
+              <p className={styles.lead}>
+                TSS & ÖSS journeys, pharmacy ops, DAP & self-service —
+                end-to-end, production-ready digital products for the insurance
+                industry.
+              </p>
+
+              <div className={styles.btns}>
+                <a href="#projects" className={styles.btnP}>
+                  See our projects →
+                </a>
+                <a href="#contact" className={styles.btnS}>
+                  Get in touch
+                </a>
+              </div>
+
+              <div className={styles.stats}>
+                <div className={styles.stat}>
+                  <div className={styles.statVal}>5+</div>
+                  <div className={styles.statLbl}>Live projects</div>
                 </div>
-
-                <div className={styles.panelGrid}>
-                  <div className={styles.panelCard}>
-                    <div className={styles.panelHead}>TSS / ÖSS</div>
-                    <div className={styles.panelDesc}>
-                      Journey screens, validations, production workflows.
-                    </div>
-                  </div>
-
-                  <div className={styles.panelCard}>
-                    <div className={styles.panelHead}>Eczane</div>
-                    <div className={styles.panelDesc}>
-                      Approval flows, invoice steps, contracted pharmacy ops.
-                    </div>
-                  </div>
-
-                  <div className={styles.panelCard}>
-                    <div className={styles.panelHead}>Yatarak / Ayakta</div>
-                    <div className={styles.panelDesc}>
-                      Hospital processes, eligibility, payment experiences.
-                    </div>
-                  </div>
-
-                  <div className={styles.panelCard}>
-                    <div className={styles.panelHead}>DAP & Self Service</div>
-                    <div className={styles.panelDesc}>
-                      Digital application + self-service modules in production.
-                    </div>
-                  </div>
+                <div className={styles.statSep} />
+                <div className={styles.stat}>
+                  <div className={styles.statVal}>E2E</div>
+                  <div className={styles.statLbl}>Delivery</div>
+                </div>
+                <div className={styles.statSep} />
+                <div className={styles.stat}>
+                  <div className={styles.statVal}>100%</div>
+                  <div className={styles.statLbl}>Insurance focused</div>
                 </div>
               </div>
-            </FadeUp>
+            </div>
+          </FadeUp>
+
+          {/* ─ Sağ: floating card (yalnızca ≥1080px) ─ */}
+          <div className={styles.card}>
+            <div className={styles.cardHeader}>
+              <span className={styles.cardLabel}>Coverage Areas</span>
+              <div className={styles.activeBadge}>
+                <span className={styles.activeDot} /> Active
+              </div>
+            </div>
+
+            <div className={styles.domainList}>
+              {domains.map((d) => (
+                <div key={d.name} className={styles.dlItem}>
+                  <div className={styles.dlIco}>{d.icon}</div>
+                  <div>
+                    <div className={styles.dlName}>{d.name}</div>
+                    <div className={styles.dlDesc}>{d.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className={styles.clientRow}>
+              <span>🤝</span>
+              <div>
+                <div className={styles.clientTxt}>Insurance sector</div>
+                <div className={styles.clientSub}>Active partnerships</div>
+              </div>
+            </div>
           </div>
-
-          <a href="#about" className={styles.scrollHint}>
-            Scroll <span className={styles.chev}>↓</span>
-          </a>
         </div>
       </Container>
     </section>

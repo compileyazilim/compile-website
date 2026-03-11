@@ -8,11 +8,16 @@ export default function PortfolioSection() {
     <Section
       id="portfolio"
       title="Portfolio"
-      subtitle="Selected work. Clean UI, fast delivery, maintainable code."
+      // subtitle değiştir:
+      subtitle="Selected production projects — built with Mapfre."
     >
       <div className={styles.grid}>
         {portfolio.map((p) => (
-          <a key={p.title} href={p.href} className={`${ui.card} ${styles.card}`}>
+          <a
+            key={p.title}
+            href={p.href}
+            className={`${ui.card} ${styles.card}`}
+          >
             <div className={styles.top}>
               <span className={styles.tag}>{p.tag}</span>
               <span className={styles.arrow}>→</span>

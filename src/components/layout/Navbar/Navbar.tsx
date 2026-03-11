@@ -1,16 +1,14 @@
 "use client";
-
 import { useState } from "react";
-import Container from "../Container/Container";
 import Image from "next/image";
+import Container from "../Container/Container";
 import styles from "./Navbar.module.css";
 
-const items = [
-  { label: "Home", href: "#home" },
+const links = [
+  { label: "Services", href: "#services" },
+  { label: "Process", href: "#process" },
+  { label: "Projects", href: "#projects" },
   { label: "About", href: "#about" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Blog", href: "#blog" },
-  { label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -24,41 +22,56 @@ export default function Navbar() {
             <Image
               src="/logo.png"
               alt="Compile"
-              width={400}
-              height={160}
+              width={120}
+              height={37}
               priority
-              className={styles.logo}
             />
           </a>
 
           <nav className={styles.nav}>
-            {items.map((x) => (
-              <a key={x.href} href={x.href} className={styles.link}>
-                {x.label}
+            {links.map((l) => (
+              <a key={l.href} href={l.href} className={styles.link}>
+                {l.label}
               </a>
             ))}
             <a href="#contact" className={styles.cta}>
-              Let’s talk
+              Let&apos;s talk
             </a>
           </nav>
 
-          <button className={styles.menuBtn} onClick={() => setOpen(!open)}>
-            Menu
+          {/* Mobil hamburger */}
+          <button
+            className={styles.hamburger}
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+          >
+            <span />
+            <span />
+            <span />
           </button>
         </div>
 
-        {open ? (
+        {open && (
           <div className={styles.mobile}>
-            {items.map((x) => (
-              <a key={x.href} href={x.href} className={styles.mobileLink} onClick={() => setOpen(false)}>
-                {x.label}
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className={styles.mobileLink}
+                onClick={() => setOpen(false)}
+              >
+                {l.label}
               </a>
             ))}
-            <a href="#contact" className={styles.mobileCta} onClick={() => setOpen(false)}>
-              Let’s talk
+            <a
+              href="#contact"
+              className={styles.mobileCta}
+              onClick={() => setOpen(false)}
+            >
+              Let&apos;s talk →
             </a>
           </div>
-        ) : null}
+        )}
       </Container>
     </header>
   );
