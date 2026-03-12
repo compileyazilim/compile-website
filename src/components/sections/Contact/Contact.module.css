@@ -1,14 +1,10 @@
-/* Contact.module.css */
-
-/* Tek koyu bölüm — tüm sitede kontrast kırılımı yaratır */
 .sec {
-  background: var(--ink); /* #1a1612 — ılık koyu */
-  padding: 112px 56px;
+  background: var(--ink);
   position: relative;
   overflow: hidden;
+  padding: 112px 56px;
 }
 
-/* Turuncu radial glow — sol üst */
 .orb1 {
   position: absolute;
   left: -160px;
@@ -22,7 +18,7 @@
   );
   pointer-events: none;
 }
-/* Turuncu glow — sağ alt */
+
 .orb2 {
   position: absolute;
   right: -120px;
@@ -45,7 +41,6 @@
   z-index: 1;
 }
 
-/* Eyebrow — çizgi+metin+çizgi (ama açık renk) */
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -85,13 +80,7 @@
   margin-bottom: 48px;
 }
 
-.links {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
 
-/* İletişim link kartı */
 .cl {
   display: flex;
   align-items: center;
@@ -110,7 +99,7 @@
     transform 0.25s;
   text-align: left;
 }
-/* Hover: turuncu tonlara geçer + sağa kayar */
+
 .cl:hover {
   background: rgba(212, 84, 26, 0.18);
   border-color: rgba(212, 84, 26, 0.35);

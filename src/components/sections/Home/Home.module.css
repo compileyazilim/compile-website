@@ -338,9 +338,46 @@
   .circleInner {
     display: none;
   }
+  .hero {
+    min-height: auto;
+    padding: 120px 0 72px;
+  }
+
+  .h1 {
+    font-size: clamp(40px, 8vw, 64px);
+  }
+
+  .lead {
+    font-size: 16px;
+    max-width: 100%;
+  }
+
+  .stats {
+    gap: 28px;
+  }
+
+  .statVal {
+    font-size: 28px;
+  }
 }
 @media (max-width: 860px) {
   .hero {
     padding: 110px 0 80px;
+  }
+}
+
+@media (max-width: 560px) {
+  .btns {
+    flex-direction: column;
+  }
+
+  .btnP,
+  .btnS {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .stats {
+    gap: 20px;
   }
 }

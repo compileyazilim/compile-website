@@ -25,31 +25,33 @@ export default function ContactSection() {
 
         <p className={styles.sub}>{c.sub}</p>
 
-        <a href={`mailto:${c.email}`} className={styles.cl}>
-          <span className={styles.ico}>✉️</span>
-          <span>{c.email}</span>
-          <span className={styles.arr}>→</span>
-        </a>
-        <a
-          href="https://www.linkedin.com/company/compileyazilim/"
-          target="_blank"
-          rel="noreferrer"
-          className={styles.cl}
-        >
-          <span className={styles.ico}>💼</span>
-          <span>{c.linkedin}</span>
-          <span className={styles.arr}>→</span>
-        </a>
-        <a
-          href="https://github.com/compileyazilim"
-          target="_blank"
-          rel="noreferrer"
-          className={styles.cl}
-        >
-          <span className={styles.ico}>🐙</span>
-          <span>{c.github}</span>
-          <span className={styles.arr}>→</span>
-        </a>
+        <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+          <a href={`mailto:${c.email}`} className={styles.cl}>
+            <span className={styles.ico}>✉️</span>
+            <span>{c.email}</span>
+            <span className={styles.arr}>→</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/company/compileyazilim/"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.cl}
+          >
+            <span className={styles.ico}>💼</span>
+            <span>{c.linkedin}</span>
+            <span className={styles.arr}>→</span>
+          </a>
+          <a
+            href="https://github.com/compileyazilim"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.cl}
+          >
+            <span className={styles.ico}>🐙</span>
+            <span>{c.github}</span>
+            <span className={styles.arr}>→</span>
+          </a>
+        </div>
       </div>
     </section>
   );

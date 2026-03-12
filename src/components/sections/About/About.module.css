@@ -1,5 +1,3 @@
-/* About.module.css */
-
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -19,7 +17,6 @@
   margin-bottom: 20px;
 }
 
-/* Değer kartları */
 .values {
   display: flex;
   flex-direction: column;
