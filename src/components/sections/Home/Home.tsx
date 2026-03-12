@@ -2,6 +2,7 @@
 import Reveal from "@/components/ui/Reveal";
 import Container from "@/components/layout/Container/Container";
 import styles from "./Home.module.css";
+import { useState, useEffect, useRef } from "react";
 import { useLang } from "@/context/LangContext";
 
 const icons = ["🏥", "💊", "🛏️", "⚡"];
@@ -9,6 +10,47 @@ const icons = ["🏥", "💊", "🛏️", "⚡"];
 export default function HomeSection() {
   const { t } = useLang();
   const h = t.home;
+  const statsRef = useRef<HTMLDivElement>(null);
+  const [count1, setCount1] = useState(0); // 10+
+  const [count2, setCount2] = useState(0); // 6
+  const [count3, setCount3] = useState(0); // 100%
+
+  useEffect(() => {
+    const el = statsRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        observer.disconnect();
+
+        // count1: 0 → 10
+        const animate = (
+          setter: (v: number) => void,
+          target: number,
+          duration: number,
+        ) => {
+          const start = performance.now();
+          const tick = (now: number) => {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+            setter(Math.floor(eased * target));
+            if (progress < 1) requestAnimationFrame(tick);
+            else setter(target);
+          };
+          requestAnimationFrame(tick);
+        };
+
+        animate(setCount1, 10, 1200);
+        animate(setCount2, 6, 1000);
+        animate(setCount3, 100, 1400);
+      },
+      { threshold: 0.5 },
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
   return (
     <section id="home" className={styles.hero}>
       <div className={styles.line} />
@@ -41,19 +83,19 @@ export default function HomeSection() {
                 </a>
               </div>
 
-              <div className={styles.stats}>
+              <div className={styles.stats} ref={statsRef}>
                 <div className={styles.stat}>
-                  <div className={styles.statVal}>{h.stat1val}</div>
+                  <div className={styles.statVal}>{count1}+</div>
                   <div className={styles.statLbl}>{h.stat1lbl}</div>
                 </div>
                 <div className={styles.statSep} />
                 <div className={styles.stat}>
-                  <div className={styles.statVal}>{h.stat2val}</div>
+                  <div className={styles.statVal}>{count2}</div>
                   <div className={styles.statLbl}>{h.stat2lbl}</div>
                 </div>
                 <div className={styles.statSep} />
                 <div className={styles.stat}>
-                  <div className={styles.statVal}>{h.stat3val}</div>
+                  <div className={styles.statVal}>{count3}%</div>
                   <div className={styles.statLbl}>{h.stat3lbl}</div>
                 </div>
               </div>

@@ -8,7 +8,6 @@
 
   /* Yazı renkleri */
   --ink: #1a1612; /* neredeyse siyah, sıcak ton */
-  --ink2: #2e2822; /* footer bg */
   --muted: #7a7068; /* body text */
   --muted2: #a09688; /* ikincil label */
 
@@ -23,7 +22,6 @@
   --bd2: rgba(26, 22, 18, 0.14); /* biraz belirgin */
   --bdo: rgba(212, 84, 26, 0.15); /* turuncu çizgi (hover) */
 
-  --r: 16px;
   --shadow: 0 2px 20px rgba(26, 22, 18, 0.07);
   --shadow-lg: 0 8px 48px rgba(26, 22, 18, 0.12);
 }

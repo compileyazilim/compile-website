@@ -143,7 +143,7 @@ const tr: Translations = {
     copy: "Compile. Sigorta dijital ürünleri.",
     services: "Hizmetler",
     projects: "Projeler",
-    contact: "İletişim",
+    about: "Hakkımızda",
   },
 };
 

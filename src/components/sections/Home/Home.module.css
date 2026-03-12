@@ -360,11 +360,6 @@
     font-size: 28px;
   }
 }
-@media (max-width: 860px) {
-  .hero {
-    padding: 110px 0 80px;
-  }
-}
 
 @media (max-width: 560px) {
   .btns {

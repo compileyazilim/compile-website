@@ -141,7 +141,7 @@ const en = {
     copy: "Compile. Insurance digital products.",
     services: "Services",
     projects: "Projects",
-    contact: "Contact",
+    about: "About",
   },
 };
 
