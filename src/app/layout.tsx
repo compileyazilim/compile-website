@@ -32,7 +32,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${playfair.variable} ${jakarta.variable}`}>
+      <body
+        className={`${playfair.variable} ${jakarta.variable}`}
+        suppressHydrationWarning
+      >
         <LangProvider>{children}</LangProvider>
       </body>
     </html>

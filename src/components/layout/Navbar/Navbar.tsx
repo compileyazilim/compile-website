@@ -59,24 +59,22 @@ export default function Navbar() {
             />
           </a>
 
-          {/* Orta: nav linkleri */}
-          <nav className={styles.nav}>
-            {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                className={`${styles.link} ${active === l.href ? styles.linkActive : ""}`}
-              >
-                {l.label}
-              </a>
-            ))}
-            <a href="#contact" className={styles.cta}>
-              {t.nav.cta}
-            </a>
-          </nav>
-
-          {/* Sağ: dil toggle + hamburger */}
           <div className={styles.right}>
+            <nav className={styles.nav}>
+              {links.map((l) => (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  className={`${styles.link} ${active === l.href ? styles.linkActive : ""}`}
+                >
+                  {l.label}
+                </a>
+              ))}
+              <a href="#contact" className={styles.cta}>
+                {t.nav.cta}
+              </a>
+            </nav>
+
             <div className={styles.langToggle}>
               <button
                 className={`${styles.langBtn} ${lang === "en" ? styles.langActive : ""}`}
@@ -92,6 +90,7 @@ export default function Navbar() {
                 TR
               </button>
             </div>
+
             <button
               className={styles.hamburger}
               onClick={() => setOpen(!open)}

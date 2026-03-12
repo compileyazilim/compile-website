@@ -6,7 +6,7 @@ import { useLang } from "@/context/LangContext";
 export default function ProjectsSection() {
   const { t } = useLang();
   const p = t.projects;
-  const icons = ["🏥", "💊", "⚡"];
+const icons = ["🏥", "💊", "⚡", "🤝"];
   return (
     <Section
       id="projects"

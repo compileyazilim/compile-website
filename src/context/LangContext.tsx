@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-  ReactNode,
-} from "react";
+import { createContext, useContext, useState, ReactNode } from "react";
 import en from "@/i18n/en";
 import tr from "@/i18n/tr";
 import type { Translations } from "@/i18n/en";
@@ -22,14 +16,13 @@ interface LangContextType {
 const LangContext = createContext<LangContextType | null>(null);
 
 export function LangProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>(() => {
-    if (typeof window === "undefined") return "en";
-    return (localStorage.getItem("lang") as Lang) ?? "en";
-  });
+  const [lang, setLangState] = useState<Lang>("en");
 
   const setLang = (l: Lang) => {
     setLangState(l);
-    localStorage.setItem("lang", l);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("lang", l);
+    }
   };
 
   const t = lang === "tr" ? tr : en;
