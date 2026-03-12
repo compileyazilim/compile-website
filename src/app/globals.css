@@ -53,11 +53,30 @@ body {
 .reveal-target {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
   will-change: opacity, transform;
 }
 .reveal-target.revealed {
   opacity: 1;
   transform: translateY(0);
   will-change: auto;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--org);
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--org2);
 }
