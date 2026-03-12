@@ -2,98 +2,75 @@
 import Reveal from "@/components/ui/Reveal";
 import Container from "@/components/layout/Container/Container";
 import styles from "./Home.module.css";
+import { useLang } from "@/context/LangContext";
 
-const domains = [
-  { icon: "🏥", name: "TSS / ÖSS", desc: "Journey screens & workflows" },
-  { icon: "💊", name: "Pharmacy", desc: "Provizyon & approval flows" },
-  {
-    icon: "🛏️",
-    name: "Inpatient / Outpatient",
-    desc: "Hospital & eligibility UX",
-  },
-  {
-    icon: "⚡",
-    name: "DAP & Self Service",
-    desc: "Digital application portals",
-  },
-];
+const icons = ["🏥", "💊", "🛏️", "⚡"];
 
 export default function HomeSection() {
+  const { t } = useLang();
+  const h = t.home;
   return (
     <section id="home" className={styles.hero}>
-      {/* Dekoratif çizgi — yatay diyagonal */}
       <div className={styles.line} />
 
-      {/* Sağ taraftaki büyük daire (büyük ekran) */}
       <div className={styles.circle} />
       <div className={styles.circleInner} />
 
       <Container>
         <div className={styles.inner}>
-          {/* ─ Sol: metin ─ */}
           <Reveal>
             <div className={styles.left}>
-              {/* Eyebrow — çizgi + yazı + çizgi */}
               <div className={styles.eyebrow}>
                 <span className={styles.eyebrowLine} />
-                Insurance Digital Products
+                {h.eyebrow}
                 <span className={styles.eyebrowLine} />
               </div>
 
-              {/* H1 — Playfair + italic accent */}
               <h1 className={styles.h1}>
-                We engineer <em className={styles.em}>insurance</em>
+                {h.h1a} <em className={styles.em}>{h.h1accent}</em>
                 <br />
-                platforms that ship.
+                {h.h1b}
               </h1>
-
-              <p className={styles.lead}>
-                We build production-ready digital platforms for the insurance
-                industry — TSS &amp; ÖSS journeys, pharmacy ops, inpatient flows
-                and self-service portals, end to end.
-              </p>
-
+              <p className={styles.lead}>{h.lead}</p>
               <div className={styles.btns}>
                 <a href="#projects" className={styles.btnP}>
-                  See our projects →
+                  {h.btnPrimary}
                 </a>
                 <a href="#contact" className={styles.btnS}>
-                  Get in touch
+                  {h.btnSecondary}
                 </a>
               </div>
 
               <div className={styles.stats}>
                 <div className={styles.stat}>
-                  <div className={styles.statVal}>5+</div>
-                  <div className={styles.statLbl}>Live projects</div>
+                  <div className={styles.statVal}>{h.stat1val}</div>
+                  <div className={styles.statLbl}>{h.stat1lbl}</div>
                 </div>
                 <div className={styles.statSep} />
                 <div className={styles.stat}>
-                  <div className={styles.statVal}>Full</div>
-                  <div className={styles.statLbl}>Stack delivery</div>
+                  <div className={styles.statVal}>{h.stat2val}</div>
+                  <div className={styles.statLbl}>{h.stat2lbl}</div>
                 </div>
                 <div className={styles.statSep} />
                 <div className={styles.stat}>
-                  <div className={styles.statVal}>100%</div>
-                  <div className={styles.statLbl}>Insurance focused</div>
+                  <div className={styles.statVal}>{h.stat3val}</div>
+                  <div className={styles.statLbl}>{h.stat3lbl}</div>
                 </div>
               </div>
             </div>
           </Reveal>
-
-          {/* ─ Sağ: floating card (yalnızca ≥1080px) ─ */}
           <div className={styles.card}>
             <div className={styles.cardHeader}>
-              <span className={styles.cardLabel}>Coverage Areas</span>
+              <span className={styles.cardLabel}>{h.cardLabel}</span>
               <div className={styles.activeBadge}>
-                <span className={styles.activeDot} /> Active
+                <span className={styles.activeDot} /> {h.cardBadge}
               </div>
             </div>
 
             <div className={styles.domainList}>
-              {domains.map((d) => (
-                <div key={d.name} className={styles.dlItem}>
-                  <div className={styles.dlIco}>{d.icon}</div>
+              {h.domains.map((d, i) => (
+                <div key={i} className={styles.dlItem}>
+                  <div className={styles.dlIco}>{icons[i]}</div>
                   <div>
                     <div className={styles.dlName}>{d.name}</div>
                     <div className={styles.dlDesc}>{d.desc}</div>
@@ -105,8 +82,8 @@ export default function HomeSection() {
             <div className={styles.clientRow}>
               <span>🤝</span>
               <div>
-                <div className={styles.clientTxt}>Insurance sector</div>
-                <div className={styles.clientSub}>Active partnerships</div>
+                <div className={styles.clientTxt}>{h.cardFooterTitle}</div>
+                <div className={styles.clientSub}>{h.cardFooterSub}</div>
               </div>
             </div>
           </div>

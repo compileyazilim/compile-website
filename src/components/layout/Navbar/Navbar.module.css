@@ -22,6 +22,13 @@
   height: 76px;
 }
 
+.right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
 .brand img {
   height: 32px;
   width: auto;
@@ -138,4 +145,41 @@
   .header {
     background: var(--cream);
   }
+}
+
+.langToggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--cream2);
+  border: 1px solid var(--bd2);
+  border-radius: 100px;
+  padding: 4px 10px;
+}
+.langBtn {
+  background: none;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 100px;
+  transition:
+    color 0.2s,
+    background 0.2s;
+  font-family: inherit;
+  letter-spacing: 0.04em;
+}
+.langBtn:hover {
+  color: var(--ink);
+}
+.langActive {
+  color: var(--org) !important;
+  background: var(--org-pale);
+}
+.langSep {
+  color: var(--bd2);
+  font-size: 11px;
+  user-select: none;
 }

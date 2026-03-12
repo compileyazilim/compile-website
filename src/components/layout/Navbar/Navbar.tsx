@@ -3,18 +3,19 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Container from "../Container/Container";
 import styles from "./Navbar.module.css";
-
-const links = [
-  { label: "Services", href: "#services" },
-  { label: "Projects", href: "#projects" },
-  { label: "About", href: "#about" },
-];
+import { useLang } from "@/context/LangContext";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
   const [scrolled, setScrolled] = useState(false);
+  const { t, lang, setLang } = useLang();
 
+  const links = [
+    { label: t.nav.services, href: "#services" },
+    { label: t.nav.projects, href: "#projects" },
+    { label: t.nav.about, href: "#about" },
+  ];
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 32);
 
@@ -46,6 +47,7 @@ export default function Navbar() {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <Container>
         <div className={styles.row}>
+          {/* Sol: logo */}
           <a href="#home" className={styles.brand}>
             <Image
               src="/logo.png"
@@ -57,6 +59,7 @@ export default function Navbar() {
             />
           </a>
 
+          {/* Orta: nav linkleri */}
           <nav className={styles.nav}>
             {links.map((l) => (
               <a
@@ -68,19 +71,37 @@ export default function Navbar() {
               </a>
             ))}
             <a href="#contact" className={styles.cta}>
-              Let&apos;s talk
+              {t.nav.cta}
             </a>
           </nav>
 
-          <button
-            className={styles.hamburger}
-            onClick={() => setOpen(!open)}
-            aria-label="Toggle menu"
-          >
-            <span />
-            <span />
-            <span />
-          </button>
+          {/* Sağ: dil toggle + hamburger */}
+          <div className={styles.right}>
+            <div className={styles.langToggle}>
+              <button
+                className={`${styles.langBtn} ${lang === "en" ? styles.langActive : ""}`}
+                onClick={() => setLang("en")}
+              >
+                EN
+              </button>
+              <span className={styles.langSep}>|</span>
+              <button
+                className={`${styles.langBtn} ${lang === "tr" ? styles.langActive : ""}`}
+                onClick={() => setLang("tr")}
+              >
+                TR
+              </button>
+            </div>
+            <button
+              className={styles.hamburger}
+              onClick={() => setOpen(!open)}
+              aria-label="Toggle menu"
+            >
+              <span />
+              <span />
+              <span />
+            </button>
+          </div>
         </div>
 
         {open && (
@@ -100,7 +121,7 @@ export default function Navbar() {
               className={styles.mobileCta}
               onClick={() => setOpen(false)}
             >
-              Let&apos;s talk →
+              {t.nav.cta} →
             </a>
           </div>
         )}

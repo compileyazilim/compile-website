@@ -1,59 +1,36 @@
-// src/components/sections/Projects/Projects.tsx
+"use client";
 import Section from "@/components/layout/Section/Section";
 import styles from "./Projects.module.css";
-
-const projects = [
-  {
-    icon: "🏥",
-    tag: "Health Insurance",
-    title: "TSS Journey Screens",
-    desc: "End-to-end complementary health insurance flow — multi-step application, real-time validation, complex eligibility logic and production-grade error handling.",
-    client: "Insurance sector client",
-    href: "#",
-  },
-  {
-    icon: "💊",
-    tag: "Pharmacy Operations",
-    title: "Pharmacy Provizyon Module",
-    desc: "Contracted pharmacy approval and provizyon flows, invoice processing steps and full operation screens deeply integrated with backend insurance services.",
-    client: "Insurance sector client",
-    href: "#",
-  },
-  {
-    icon: "⚡",
-    tag: "Digital Self Service",
-    title: "DAP & Self Service Portal",
-    desc: "Policy management, digital application and self-service modules on a unified platform. Clean architecture, fast load times and robust API integration.",
-    client: "Insurance sector client",
-    href: "#",
-  },
-];
+import { useLang } from "@/context/LangContext";
 
 export default function ProjectsSection() {
+  const { t } = useLang();
+  const p = t.projects;
+  const icons = ["🏥", "💊", "⚡"];
   return (
     <Section
       id="projects"
-      tag="Our work"
+      tag={p.tag}
       title={
         <>
-          Real projects,
+          {p.titleA}
           <br />
-          <em>real impact</em>.
+          <em>{p.titleAccent}</em>.
         </>
       }
-      subtitle="Production-grade digital products delivered for clients in the insurance sector."
+      subtitle={p.subtitle}
       background="cream"
     >
       <div className={styles.grid}>
-        {projects.map((p) => (
-          <a key={p.title} href={p.href} className={styles.card}>
+        {p.items.map((item, i) => (
+          <a key={i} href="#" className={styles.card}>
             <div className={styles.top}>
-              <div className={styles.ico}>{p.icon}</div>
+              <div className={styles.ico}>{icons[i]}</div>
               <div className={styles.arr}>↗</div>
             </div>
-            <div className={styles.tag}>{p.tag}</div>
-            <div className={styles.title}>{p.title}</div>
-            <p className={styles.desc}>{p.desc}</p>
+            <div className={styles.tag}>{item.tag}</div>
+            <div className={styles.title}>{item.title}</div>
+            <p className={styles.desc}>{item.desc}</p>
             <div className={styles.foot}>
               <span className={styles.dot} />
               <span className={styles.client}>{p.client}</span>

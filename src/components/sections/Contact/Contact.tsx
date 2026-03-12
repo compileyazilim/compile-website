@@ -1,7 +1,10 @@
-// src/components/sections/Contact/Contact.tsx
+"use client";
 import styles from "./Contact.module.css";
+import { useLang } from "@/context/LangContext";
 
 export default function ContactSection() {
+  const { t } = useLang();
+  const c = t.contact;
   return (
     <section id="contact" className={styles.sec}>
       <div className={styles.orb1} />
@@ -10,48 +13,43 @@ export default function ContactSection() {
       <div className={styles.inner}>
         <div className={styles.eyebrow}>
           <span className={styles.line} />
-          Let&apos;s work together
+          {c.eyebrow}
           <span className={styles.line} />
         </div>
 
         <h2 className={styles.h}>
-          Ready to build
+          {c.titleA}
           <br />
-          something <em className={styles.em}>exceptional</em>?
+          {c.titleB} <em className={styles.em}>{c.titleAccent}</em>?
         </h2>
 
-        <p className={styles.sub}>
-          Whether you&apos;re starting a new insurance platform or improving an
-          existing one — we&apos;d love to hear about your project.
-        </p>
+        <p className={styles.sub}>{c.sub}</p>
 
-        <div className={styles.links}>
-          <a href="mailto:developers@compile.com.tr" className={styles.cl}>
-            <span className={styles.ico}>✉️</span>
-            <span>developers@compile.com.tr</span>
-            <span className={styles.arr}>→</span>
-          </a>
-          <a
-            href="https://www.linkedin.com/company/compileyazilim/"
-            target="_blank"
-            rel="noreferrer"
-            className={styles.cl}
-          >
-            <span className={styles.ico}>💼</span>
-            <span>Connect on LinkedIn</span>
-            <span className={styles.arr}>→</span>
-          </a>
-          <a
-            href="https://github.com/compileyazilim"
-            target="_blank"
-            rel="noreferrer"
-            className={styles.cl}
-          >
-            <span className={styles.ico}>🐙</span>
-            <span>Explore our GitHub</span>
-            <span className={styles.arr}>→</span>
-          </a>
-        </div>
+        <a href={`mailto:${c.email}`} className={styles.cl}>
+          <span className={styles.ico}>✉️</span>
+          <span>{c.email}</span>
+          <span className={styles.arr}>→</span>
+        </a>
+        <a
+          href="https://www.linkedin.com/company/compileyazilim/"
+          target="_blank"
+          rel="noreferrer"
+          className={styles.cl}
+        >
+          <span className={styles.ico}>💼</span>
+          <span>{c.linkedin}</span>
+          <span className={styles.arr}>→</span>
+        </a>
+        <a
+          href="https://github.com/compileyazilim"
+          target="_blank"
+          rel="noreferrer"
+          className={styles.cl}
+        >
+          <span className={styles.ico}>🐙</span>
+          <span>{c.github}</span>
+          <span className={styles.arr}>→</span>
+        </a>
       </div>
     </section>
   );

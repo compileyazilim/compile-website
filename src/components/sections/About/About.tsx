@@ -1,69 +1,38 @@
-// src/components/sections/About/About.tsx
+"use client";
 import Section from "@/components/layout/Section/Section";
 import styles from "./About.module.css";
-
-const values = [
-  {
-    icon: "🛡️",
-    title: "Reliable Delivery",
-    desc: "Production mindset from day one. Every feature is built to ship and maintain — not just to demo.",
-  },
-  {
-    icon: "⚡",
-    title: "Speed Without Compromise",
-    desc: "Rapid iteration with clean architecture. We move fast without creating technical debt.",
-  },
-  {
-    icon: "🧩",
-    title: "Scalable UI Systems",
-    desc: "Component libraries and design tokens built for consistency across every screen, every team.",
-  },
-  {
-    icon: "📈",
-    title: "Performance by Default",
-    desc: "Core Web Vitals, accessibility and SEO are not afterthoughts — they are part of every build.",
-  },
-];
+import { useLang } from "@/context/LangContext";
 
 export default function AboutSection() {
+  const { t } = useLang();
+  const a = t.about;
+  const icons = ["🛡️", "⚡", "🧩", "📈"];
   return (
     <Section
       id="about"
-      tag="About Compile"
+      tag={a.tag}
       title={
         <>
-          We turn <em>complexity</em>
+          {a.titleA} <em>{a.titleAccent}</em>
           <br />
-          into clarity.
+          {a.titleB}
         </>
       }
       background="cream2"
     >
       <div className={styles.grid}>
         <div className={styles.left}>
-          <p className={styles.p}>
-            Compile is a focused software team dedicated to building fast,
-            reliable and genuinely well-crafted digital products for the
-            insurance industry.
-          </p>
-          <p className={styles.p}>
-            We partner with insurers and insurtech teams to ship clean frontend
-            architecture, consistent UI systems and performance-driven
-            experiences — from the first commit to long-term production support.
-          </p>
-          <p className={styles.p}>
-            Our deep domain knowledge means we understand your workflows, your
-            compliance requirements and your users — so we build the right
-            thing, right.
-          </p>
+          <p className={styles.p}>{a.p1}</p>
+          <p className={styles.p}>{a.p2}</p>
+          <p className={styles.p}>{a.p3}</p>
         </div>
 
         <div className={styles.values}>
-          {values.map((v) => (
-            <div key={v.title} className={styles.vi}>
+          {a.values.map((v, i) => (
+            <div key={i} className={styles.vi}>
               <div className={styles.viRow}>
                 <span className={styles.viTitle}>{v.title}</span>
-                <span className={styles.viIco}>{v.icon}</span>
+                <span className={styles.viIco}>{icons[i]}</span>
               </div>
               <p className={styles.viDesc}>{v.desc}</p>
             </div>

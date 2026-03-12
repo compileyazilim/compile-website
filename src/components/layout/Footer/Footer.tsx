@@ -1,9 +1,12 @@
-// src/components/layout/Footer/Footer.tsx
+"use client";
 import Image from "next/image";
 import Container from "../Container/Container";
 import styles from "./Footer.module.css";
+import { useLang } from "@/context/LangContext";
 
 export default function Footer() {
+  const { t } = useLang();
+  const f = t.footer;
   return (
     <footer className={styles.footer}>
       <Container>
@@ -16,12 +19,12 @@ export default function Footer() {
             className={styles.logo}
           />
           <div className={styles.copy}>
-            © {new Date().getFullYear()} Compile. Insurance digital products.
+            © {new Date().getFullYear()} {f.copy}
           </div>
           <div className={styles.links}>
-            <a href="#services">Services</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+            <a href="#services">{f.services}</a>
+            <a href="#projects">{f.projects}</a>
+            <a href="#contact">{f.contact}</a>
           </div>
         </div>
       </Container>
