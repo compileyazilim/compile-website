@@ -1,6 +1,5 @@
 "use client";
-import Image from "next/image";
-import { FadeUp, fadeUpProps } from "@/components/ui/Motion";
+import Reveal from "@/components/ui/Reveal";
 import Container from "@/components/layout/Container/Container";
 import styles from "./Home.module.css";
 
@@ -32,7 +31,7 @@ export default function HomeSection() {
       <Container>
         <div className={styles.inner}>
           {/* ─ Sol: metin ─ */}
-          <FadeUp {...fadeUpProps}>
+          <Reveal>
             <div className={styles.left}>
               {/* Eyebrow — çizgi + yazı + çizgi */}
               <div className={styles.eyebrow}>
@@ -49,9 +48,9 @@ export default function HomeSection() {
               </h1>
 
               <p className={styles.lead}>
-                TSS & ÖSS journeys, pharmacy ops, DAP & self-service —
-                end-to-end, production-ready digital products for the insurance
-                industry.
+                We build production-ready digital platforms for the insurance
+                industry — TSS &amp; ÖSS journeys, pharmacy ops, inpatient flows
+                and self-service portals, end to end.
               </p>
 
               <div className={styles.btns}>
@@ -70,8 +69,8 @@ export default function HomeSection() {
                 </div>
                 <div className={styles.statSep} />
                 <div className={styles.stat}>
-                  <div className={styles.statVal}>E2E</div>
-                  <div className={styles.statLbl}>Delivery</div>
+                  <div className={styles.statVal}>Full</div>
+                  <div className={styles.statLbl}>Stack delivery</div>
                 </div>
                 <div className={styles.statSep} />
                 <div className={styles.stat}>
@@ -80,7 +79,7 @@ export default function HomeSection() {
                 </div>
               </div>
             </div>
-          </FadeUp>
+          </Reveal>
 
           {/* ─ Sağ: floating card (yalnızca ≥1080px) ─ */}
           <div className={styles.card}>

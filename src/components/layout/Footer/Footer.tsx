@@ -9,9 +9,9 @@ export default function Footer() {
       <Container>
         <div className={styles.inner}>
           <Image
-            src="/logo.png"
+            src="/footer_logo.png"
             alt="Compile"
-            width={100}
+            width={31}
             height={31}
             className={styles.logo}
           />

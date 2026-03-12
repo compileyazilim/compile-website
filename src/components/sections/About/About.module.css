@@ -3,53 +3,20 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  gap: 56px;
   align-items: start;
 }
 
-/* Sol kolon — biraz iç padding */
 .left {
-  padding-right: 24px;
-}
-
-.kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--org);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-.kickerLine {
-  width: 20px;
-  height: 1px;
-  background: var(--org);
-}
-
-/* Playfair başlık */
-.h {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(32px, 3vw, 42px);
-  font-weight: 900;
-  color: var(--ink);
-  margin-bottom: 28px;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-}
-.em {
-  font-style: italic;
-  color: var(--org);
+  padding-right: 16px;
 }
 
 .p {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 300;
   color: var(--muted);
-  line-height: 1.85;
-  margin-bottom: 18px;
+  line-height: 1.9;
+  margin-bottom: 20px;
 }
 
 /* Değer kartları */
@@ -58,16 +25,16 @@
   flex-direction: column;
   gap: 14px;
 }
+
 .vi {
   background: #fff;
-  border: 1px solid rgba(26, 22, 18, 0.14);
+  border: 1px solid rgba(26, 22, 18, 0.12);
   border-radius: 16px;
-  padding: 22px;
+  padding: 22px 24px;
   transition:
     border-color 0.25s,
     transform 0.25s;
 }
-/* Hover: sağa doğru kayar — dinamik ama subtle */
 .vi:hover {
   border-color: var(--bdo);
   transform: translateX(6px);
@@ -77,20 +44,20 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 7px;
+  margin-bottom: 8px;
 }
 .viTitle {
   font-size: 15px;
   font-weight: 700;
   color: var(--ink);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 .viIco {
   font-size: 18px;
 }
 .viDesc {
   font-size: 13px;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--muted);
   line-height: 1.65;
 }

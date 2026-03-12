@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
 
-/* ─── Design Tokens ─── */
 :root {
   /* Krem zemin — luxury nötr, ne beyaz ne gri */
   --cream: #faf8f4;
@@ -29,7 +28,6 @@
   --shadow-lg: 0 8px 48px rgba(26, 22, 18, 0.12);
 }
 
-/* ─── Reset ─── */
 *,
 *::before,
 *::after {
@@ -42,9 +40,7 @@ html {
 }
 section {
   scroll-margin-top: 76px;
-} /* sticky nav yüksekliği kadar offset */
-
-/* ─── Body ─── */
+}
 body {
   background: var(--cream);
   color: var(--ink);
@@ -54,14 +50,14 @@ body {
   overflow-x: hidden;
 }
 
-/* ─── Noise Texture Overlay ─── */
-/* Inline SVG turbulence filtresi — premium kağıt dokusu hissi */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.025'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.4;
+.reveal-target {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+  will-change: opacity, transform;
+}
+.reveal-target.revealed {
+  opacity: 1;
+  transform: translateY(0);
+  will-change: auto;
 }

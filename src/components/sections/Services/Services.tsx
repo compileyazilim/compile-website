@@ -33,13 +33,19 @@ export default function ServicesSection() {
   return (
     <Section
       id="services"
-      title="Built for <em>insurance</em>,<br />built for production.</>"
+      tag="What we do"
+      title={
+        <>
+          Built for <em>insurance</em>,<br />
+          built for production.
+        </>
+      }
       subtitle="We design, build and ship insurance-specific digital products — from first wireframe to go-live."
+      background="cream2"
     >
       <div className={styles.grid}>
         {services.map((s) => (
           <div key={s.num} className={styles.sv}>
-            {/* Büyük dekoratif numara — arka planda soluk */}
             <div className={styles.num}>{s.num}</div>
             <div className={styles.title}>{s.title}</div>
             <p className={styles.desc}>{s.desc}</p>

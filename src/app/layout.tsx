@@ -16,12 +16,19 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Compile — Insurance Digital Products",
+  title: "Compile",
   description:
     "End-to-end insurance platforms. TSS, ÖSS, pharmacy, DAP & self-service.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body className={`${playfair.variable} ${jakarta.variable}`}>

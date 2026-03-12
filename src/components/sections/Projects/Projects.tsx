@@ -7,23 +7,23 @@ const projects = [
     icon: "🏥",
     tag: "Health Insurance",
     title: "TSS Journey Screens",
-    desc: "Complementary health insurance application and management flow. Multi-step journey, validation layers, production-ready implementation for a leading insurer.",
+    desc: "End-to-end complementary health insurance flow — multi-step application, real-time validation, complex eligibility logic and production-grade error handling.",
     client: "Insurance sector client",
     href: "#",
   },
   {
     icon: "💊",
-    tag: "Pharmacy Ops",
+    tag: "Pharmacy Operations",
     title: "Pharmacy Provizyon Module",
-    desc: "Contracted pharmacy approval flows, invoice steps and end-to-end operation screens — deeply integrated with backend provizyon services.",
+    desc: "Contracted pharmacy approval and provizyon flows, invoice processing steps and full operation screens deeply integrated with backend insurance services.",
     client: "Insurance sector client",
     href: "#",
   },
   {
     icon: "⚡",
-    tag: "Self Service",
+    tag: "Digital Self Service",
     title: "DAP & Self Service Portal",
-    desc: "Digital application platform and self-service insurance management modules. Modern UI architecture backed by a robust, fully integrated service layer.",
+    desc: "Policy management, digital application and self-service modules on a unified platform. Clean architecture, fast load times and robust API integration.",
     client: "Insurance sector client",
     href: "#",
   },
@@ -33,16 +33,22 @@ export default function ProjectsSection() {
   return (
     <Section
       id="projects"
-      title="Real projects,<br /><em>real impact</em>."
-      subtitle="Production projects delivered for clients in the insurance sector."
+      tag="Our work"
+      title={
+        <>
+          Real projects,
+          <br />
+          <em>real impact</em>.
+        </>
+      }
+      subtitle="Production-grade digital products delivered for clients in the insurance sector."
+      background="cream"
     >
       <div className={styles.grid}>
         {projects.map((p) => (
           <a key={p.title} href={p.href} className={styles.card}>
             <div className={styles.top}>
-              {/* Sol: emoji ikon kutu */}
               <div className={styles.ico}>{p.icon}</div>
-              {/* Sağ: yuvarlak ok */}
               <div className={styles.arr}>↗</div>
             </div>
             <div className={styles.tag}>{p.tag}</div>

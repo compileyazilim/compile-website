@@ -6,52 +6,58 @@ const values = [
   {
     icon: "🛡️",
     title: "Reliable Delivery",
-    desc: "Production mindset from day one. Every feature is built to ship, not just to demo.",
+    desc: "Production mindset from day one. Every feature is built to ship and maintain — not just to demo.",
   },
   {
     icon: "⚡",
-    title: "Speed & Quality",
-    desc: "Clean code structure and rapid iteration — we move fast without sacrificing quality.",
+    title: "Speed Without Compromise",
+    desc: "Rapid iteration with clean architecture. We move fast without creating technical debt.",
   },
   {
     icon: "🧩",
-    title: "Scalable Systems",
-    desc: "Component libraries, design tokens and consistent UX standards for long-term solutions.",
+    title: "Scalable UI Systems",
+    desc: "Component libraries and design tokens built for consistency across every screen, every team.",
   },
   {
     icon: "📈",
-    title: "Performance Focused",
-    desc: "Core Web Vitals, SEO and UX metrics — we continuously improve what gets measured.",
+    title: "Performance by Default",
+    desc: "Core Web Vitals, accessibility and SEO are not afterthoughts — they are part of every build.",
   },
 ];
 
 export default function AboutSection() {
   return (
-    <Section id="about" title="About Compile">
+    <Section
+      id="about"
+      tag="About Compile"
+      title={
+        <>
+          We turn <em>complexity</em>
+          <br />
+          into clarity.
+        </>
+      }
+      background="cream2"
+    >
       <div className={styles.grid}>
-        {/* Sol: metin blok */}
         <div className={styles.left}>
-          <div className={styles.kicker}>
-            <span className={styles.kickerLine} />
-            About Compile
-          </div>
-          <h2 className={styles.h}>
-            Digital products that make <em className={styles.em}>complex</em>{" "}
-            feel simple.
-          </h2>
           <p className={styles.p}>
-            Compile is a focused software team dedicated to turning the
-            insurance industry&apos;s most complex processes into fast, reliable
-            and genuinely beautiful digital products.
+            Compile is a focused software team dedicated to building fast,
+            reliable and genuinely well-crafted digital products for the
+            insurance industry.
           </p>
           <p className={styles.p}>
-            We help teams move faster with clean frontend architecture,
-            consistent UI systems and performance-driven delivery — from first
-            commit to production.
+            We partner with insurers and insurtech teams to ship clean frontend
+            architecture, consistent UI systems and performance-driven
+            experiences — from the first commit to long-term production support.
+          </p>
+          <p className={styles.p}>
+            Our deep domain knowledge means we understand your workflows, your
+            compliance requirements and your users — so we build the right
+            thing, right.
           </p>
         </div>
 
-        {/* Sağ: değerler listesi */}
         <div className={styles.values}>
           {values.map((v) => (
             <div key={v.title} className={styles.vi}>
