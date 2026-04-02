@@ -5,7 +5,7 @@ import styles from "./Home.module.css";
 import { useState, useEffect, useRef } from "react";
 import { useLang } from "@/context/LangContext";
 
-const icons = ["🏥", "💊", "🛏️", "⚡"];
+const icons = ["🏥", "💊", "🧾", "🤝", "👨‍⚕️", "📊"];
 
 export default function HomeSection() {
   const { t } = useLang();
@@ -41,8 +41,8 @@ export default function HomeSection() {
           requestAnimationFrame(tick);
         };
 
-        animate(setCount1, 10, 1200);
-        animate(setCount2, 6, 1000);
+        animate(setCount1, 15, 1200);
+        animate(setCount2, 20, 1000);
         animate(setCount3, 100, 1400);
       },
       { threshold: 0.5 },
@@ -119,14 +119,6 @@ export default function HomeSection() {
                   </div>
                 </div>
               ))}
-            </div>
-
-            <div className={styles.clientRow}>
-              <span>🤝</span>
-              <div>
-                <div className={styles.clientTxt}>{h.cardFooterTitle}</div>
-                <div className={styles.clientSub}>{h.cardFooterSub}</div>
-              </div>
             </div>
           </div>
         </div>
