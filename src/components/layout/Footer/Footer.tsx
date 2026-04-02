@@ -12,7 +12,7 @@ export default function Footer() {
       <Container>
         <div className={styles.inner}>
           <Image
-            src="/footer_logo.png"
+            src="/footer_logo.svg"
             alt="Compile"
             width={31}
             height={31}

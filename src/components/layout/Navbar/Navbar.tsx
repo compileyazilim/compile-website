@@ -50,7 +50,7 @@ export default function Navbar() {
           {/* Sol: logo */}
           <a href="#home" className={styles.brand}>
             <Image
-              src="/logo.png"
+              src="/logo.svg"
               alt="Compile"
               width={120}
               height={37}
