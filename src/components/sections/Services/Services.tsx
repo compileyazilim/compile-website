@@ -12,7 +12,7 @@ export default function ServicesSection() {
       tag={s.tag}
       title={
         <>
-          {s.titleA} <em>{s.titleAccent}</em>,<br />
+          {s.titleA} <em>{s.titleAccent}</em><br />
           {s.titleB}
         </>
       }

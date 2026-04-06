@@ -22,7 +22,7 @@ export default function ContactSection() {
           <h2 className={styles.h}>
             {c.titleA}
             <br />
-            {c.titleB} <em className={styles.em}>{c.titleAccent}</em>?
+            {c.titleB} <em className={styles.em}>{c.titleAccent}</em>
           </h2>
 
           <p className={styles.sub}>{c.sub}</p>
@@ -43,16 +43,6 @@ export default function ContactSection() {
             >
               <span className={styles.ico}>💼</span>
               <span>{c.linkedin}</span>
-              <span className={styles.arr}>→</span>
-            </a>
-            <a
-              href="https://github.com/compileyazilim"
-              target="_blank"
-              rel="noreferrer"
-              className={styles.cl}
-            >
-              <span className={styles.ico}>🐙</span>
-              <span>{c.github}</span>
               <span className={styles.arr}>→</span>
             </a>
           </div>

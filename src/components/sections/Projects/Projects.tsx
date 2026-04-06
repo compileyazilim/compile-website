@@ -15,7 +15,7 @@ const icons = ["🏥", "📋", "🧾", "🤝", "👨‍⚕️", "📊"];
         <>
           {p.titleA}
           <br />
-          <em>{p.titleAccent}</em>.
+          <em>{p.titleAccent}</em>
         </>
       }
       subtitle={p.subtitle}
@@ -31,10 +31,6 @@ const icons = ["🏥", "📋", "🧾", "🤝", "👨‍⚕️", "📊"];
             <div className={styles.tag}>{item.tag}</div>
             <div className={styles.title}>{item.title}</div>
             <p className={styles.desc}>{item.desc}</p>
-            <div className={styles.foot}>
-              <span className={styles.dot} />
-              <span className={styles.client}>{p.client}</span>
-            </div>
           </a>
         ))}
       </div>
