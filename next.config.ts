@@ -1,9 +1,9 @@
+const repoName = "compile-website";
+
 const nextConfig = {
   output: "export",
-  images: {
-    unoptimized: true,
-  },
-  assetPrefix: "./",  
+  basePath: `/${repoName}`,
+  assetPrefix: `/${repoName}/`,
 };
 
 export default nextConfig;
